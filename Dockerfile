@@ -25,6 +25,7 @@ RUN apk add --update \
       php5-phar \
       php5-xml \
       php5-zlib \
+      dumb-init \
   && mkdir -p /etc/nginx/conf.d \
   && rm -rf /var/cache/apk/*
 
@@ -40,6 +41,8 @@ EXPOSE 80
 WORKDIR /data/htdocs
 
 VOLUME ["/data/htdocs", "/data/logs"]
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 CMD ["/run.sh"]
 
