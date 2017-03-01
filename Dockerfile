@@ -33,7 +33,7 @@ RUN apk add --update \
 
 COPY files/nginx.conf /etc/nginx/
 COPY files/php-fpm.conf /etc/php/
-COPY files/default.conf /etc/nginx/conf.d/
+COPY files/sendy.conf /etc/nginx/conf.d/default.conf
 COPY files/run.sh /
 
 RUN chmod +x /run.sh
