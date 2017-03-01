@@ -27,7 +27,9 @@ RUN apk add --update \
       php5-zlib \
       dumb-init \
   && mkdir -p /etc/nginx/conf.d \
-  && rm -rf /var/cache/apk/*
+  && rm -rf /var/cache/apk/* \
+  && ln -sf /dev/stdout /var/log/nginx/access.log \
+  && ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY files/nginx.conf /etc/nginx/
 COPY files/php-fpm.conf /etc/php/
