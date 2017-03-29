@@ -31,8 +31,8 @@ RUN apk add --update \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
   && ln -sf /dev/stderr /var/log/nginx/error.log
 
-COPY files/nginx.conf /etc/nginx/
-COPY files/php-fpm.conf /etc/php/
+COPY files/nginx.conf /etc/nginx/nginx.conf
+COPY files/php-fpm.conf /etc/php/php-fpm.conf
 COPY files/sendy.conf /etc/nginx/conf.d/default.conf
 COPY files/run.sh /
 
