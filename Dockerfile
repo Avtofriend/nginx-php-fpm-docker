@@ -37,8 +37,8 @@ COPY files/php.ini /etc/php5/php.ini
 COPY files/sendy.conf /etc/nginx/conf.d/default.conf
 COPY files/run.sh /
 
-ADD autoresponders /etc/crontabs/autoresponders
-ADD scheduled /etc/crontabs/scheduled
+ADD files/autoresponders /etc/crontabs/autoresponders
+ADD files/scheduled /etc/crontabs/scheduled
 
 RUN chmod +x /run.sh
 
