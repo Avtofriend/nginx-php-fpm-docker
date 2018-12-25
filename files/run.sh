@@ -15,3 +15,5 @@ mkdir -p /data/logs/php-fpm
 mkdir -p /tmp/nginx
 chown nginx /tmp/nginx
 nginx
+
+/usr/sbin/crond -c /etc/crontabs -f
